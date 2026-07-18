@@ -89,6 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const projectGallery = document.querySelector('#projectGallery');
+  if (projectGallery) {
+    const albums = [
+      { prefix: 'album-one', count: 149, label: 'Industrial automation project' },
+      { prefix: 'album-two', count: 60, label: 'Industrial automation project' }
+    ];
+    const galleryItems = [];
+    albums.forEach(album => {
+      for (let number = 1; number <= album.count; number += 1) {
+        const formattedNumber = String(number).padStart(3, '0');
+        const item = document.createElement('div');
+        item.className = 'image-card';
+        item.innerHTML = `<img src="assets/images/projects/${album.prefix}-${formattedNumber}.jpg" alt="${album.label} ${number}" loading="lazy"><h3>${album.label} ${number}</h3>`;
+        galleryItems.push(item);
+      }
+    });
+    projectGallery.replaceChildren(...galleryItems);
+  }
+
   const registerServiceWorker = async () => {
     if ('serviceWorker' in navigator) {
       try {
