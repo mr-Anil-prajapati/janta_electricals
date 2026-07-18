@@ -31,13 +31,16 @@ if (themeToggle) {
 
 /* ── Page Loader ── */
 const loader = document.getElementById('page-loader');
-if (loader) {
-  const hideLoader = () => loader.classList.add('hidden');
-  // Hide after resources load (normal case)
-  window.addEventListener('load', () => setTimeout(hideLoader, 900));
-  // Fallback: always hide after 3 seconds max, so site is never stuck
-  setTimeout(hideLoader, 3000);
-}
+const hideLoader = () => {
+  if (!loader) return;
+  loader.classList.add('hidden');
+  // Force display:none after transition so it can NEVER block the page
+  setTimeout(() => { loader.style.display = 'none'; }, 600);
+};
+// Hide as soon as DOM is ready (doesn't wait for CDN fonts/scripts)
+document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 800));
+// Ultra-safe fallback: hide after 1.5s no matter what
+setTimeout(hideLoader, 1500);
 
 /* ── Scroll Progress Bar ── */
 const scrollBar = document.getElementById('scroll-progress');
