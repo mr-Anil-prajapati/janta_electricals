@@ -1,5 +1,5 @@
 
-const cacheName = 'janta-electricals-v2';
+const cacheName = 'janta-electricals-v3';
 const assetsToCache = [
   './',
   './index.html',
