@@ -3,131 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about Janta Electricals story, mission, vision, team, safety standards, and commitment to quality electrical and automation services.">
-  <meta name="keywords" content="Electrical Services, Industrial Automation, PLC Programming, Solar, UPS, Smart Home, Electrical Panels">
-  <meta property="og:title" content="About Janta Electricals | Janta Electricals">
-  <meta property="og:description" content="Learn about Janta Electricals story, mission, vision, team, safety standards, and commitment to quality electrical and automation services.">
+  <meta name="description" content="About Janta Electricals — our story, mission, vision, team values, and 30-year journey delivering trusted electrical and automation services in Dhanbad, Jharkhand.">
+  <meta name="keywords" content="About Janta Electricals, Electrical Services, Industrial Automation, PLC, Solar, Dhanbad">
+  <meta property="og:title" content="About Us | Janta Electricals">
+  <meta property="og:description" content="Learn about Janta Electricals' story, mission, and 30-year commitment to electrical excellence in Jharkhand.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Janta Electricals | Janta Electricals">
-  <meta name="twitter:description" content="Learn about Janta Electricals story, mission, vision, team, safety standards, and commitment to quality electrical and automation services.">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#00a8ff">
   <link rel="icon" href="assets/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <title>About Janta Electricals | Janta Electricals</title>
+  <title>About Us | Janta Electricals</title>
 </head>
 <body>
-  <div class="topbar">
-    <div>Trusted electrical and automation partner for homes, factories, and solar systems.</div>
-    <div><i class="fas fa-phone"></i> +91 98765 43210</div>
+
+  <div id="page-loader">
+    <div class="loader-logo">⚡ Janta Electricals</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
+  <div id="scroll-progress"></div>
+
+  <div class="topbar">
+    <div><i class="fas fa-map-marker-alt"></i> Bhowra, Dhanbad, Jharkhand</div>
+    <div><a href="tel:+919122407756"><i class="fas fa-phone"></i> +91 91224 07756</a></div>
+  </div>
+
   <header class="site-header">
     <nav class="navbar">
-      <a class="brand" href="index.html">Janta Electricals</a>
-      <div class="nav-links">
-        <a href="index.html" class="">Home</a>
+      <a class="brand" href="index.html">
+        <span class="brand-icon"><i class="fas fa-bolt"></i></span>
+        Janta <span class="brand-accent">Electricals</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
-        <a href="residential.html" class="">Residential</a>
-        <a href="industrial.html" class="">Industrial</a>
-        <a href="solar.html" class="">Solar</a>
-        <a href="projects.html" class="">Projects</a>
-        <a href="gallery.html" class="">Gallery</a>
-        <a href="contact.html" class="">Contact</a>
-        <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="residential.html">Residential</a>
+        <a href="industrial.html">Industrial</a>
+        <a href="solar.html">Solar</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <button id="themeToggle" class="btn-theme" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-  
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy" data-aos="fade-up">
-      <div class="hero-badges"><span class="hero-badge">Company Story</span><span class="hero-badge">Safety First</span></div>
-      <h1>Trusted Electrical & Automation Partners</h1>
-      <p>Janta Electricals combines industry knowledge, certified professionals, and modern systems to support homes and factories with premium installations.</p>
-      <div class="hero-actions"><a href="contact.html" class="btn btn-primary"><i class="fas fa-hands-helping"></i> Talk to Our Team</a><a href="assets/company-profile.pdf" class="btn btn-secondary"><i class="fas fa-download"></i> Download Brochure</a></div>
+
+  <!-- Hero -->
+  <section class="hero" style="min-height:70vh">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><i class="fas fa-building"></i> Our Story</div>
+        <h1>Trusted Electrical &amp; Automation <span class="gradient-text">Partners Since 1995</span></h1>
+        <p>Janta Electricals combines industry knowledge, certified professionals, and modern systems to support homes and factories with reliable, premium electrical installations.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-comments"></i> Talk to Our Team</a>
+          <a href="assets/company-profile.pdf" class="btn btn-secondary"><i class="fas fa-download"></i> Download Brochure</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80" alt="Professional electrical engineering team" loading="lazy">
+        </div>
+      </div>
     </div>
-    <div class="hero-visual" data-aos="fade-left"><div class="hero-image"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Company team meeting" loading="lazy"></div></div>
-  </div>
-</section>
+  </section>
 
-<section class="section bg-surface" data-aos="fade-up">
-  <div class="section-title"><h2>Our Story</h2><p>From small residential service calls to large industrial automation projects, Janta Electricals has grown by delivering trust and technical excellence.</p></div>
-  <div class="grid grid-2">
-    <div class="card"><h3>Mission</h3><p>To provide safe, energy-efficient, and technologically advanced electrical solutions that enhance comfort, productivity, and power reliability.</p></div>
-    <div class="card"><h3>Vision</h3><p>To be the preferred electrical and automation partner across domestic and industrial markets by setting new standards in service quality.</p></div>
-  </div>
-</section>
+  <!-- Stats Bar -->
+  <section class="section bg-surface">
+    <div class="section-inner">
+      <div class="stats-grid" data-aos="fade-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="30" data-suffix="+">30+</span>
+          <span class="stat-label">Years of Service</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="500" data-suffix="+">500+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="80" data-suffix="+">80+</span>
+          <span class="stat-label">Industrial Clients</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="100" data-suffix="%">100%</span>
+          <span class="stat-label">Safety Compliant</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" data-aos="fade-up">
-  <div class="section-title"><h2>What Makes Us Different</h2><p>Our focus on safety, quality, and customer experience ensures every project is completed with care.</p></div>
-  <div class="grid grid-3">
-    <div class="card"><h3>Experienced Engineers</h3><p>Specialists in PLC, solar, UPS, and electrical installations.</p></div>
-    <div class="card"><h3>Quality Commitment</h3><p>Inspection-driven work with premium materials and expert workmanship.</p></div>
-    <div class="card"><h3>Customer Trust</h3><p>Positive feedback from residential homeowners and industrial clients.</p></div>
-  </div>
-</section>
+  <!-- Mission & Vision -->
+  <section class="section" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-bullseye"></i> Purpose</div>
+        <h2>Our <span class="gradient-text">Mission &amp; Vision</span></h2>
+        <p>From small residential service calls to large industrial automation projects, we've grown by delivering trust and technical excellence.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-rocket"></i></div>
+          <div class="card-title">Our Mission</div>
+          <p class="card-text">To provide safe, energy-efficient, and technologically advanced electrical solutions that enhance comfort, productivity, and power reliability for every client we serve.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-eye"></i></div>
+          <div class="card-title">Our Vision</div>
+          <p class="card-text">To be the preferred electrical and automation partner across domestic and industrial markets in Jharkhand — setting new standards in service quality, safety, and innovation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section bg-surface" data-aos="fade-up">
-  <div class="section-title"><h2>Team & Safety Standards</h2><p>Certified technicians, structured project planning, and quality checks at every step.</p></div>
-  <div class="grid grid-3">
-    <div class="card"><h3>Professional Team</h3><p>Electrical engineers, project managers, and field technicians who deliver on time.</p></div>
-    <div class="card"><h3>Safety Standards</h3><p>Compliance with earthing, load checks, insulation testing, and site safety protocols.</p></div>
-    <div class="card"><h3>Quality Assurance</h3><p>System testing, warranty support, and maintenance plans for lasting performance.</p></div>
-  </div>
-</section>
+  <!-- What Makes Us Different -->
+  <section class="section bg-surface" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-gem"></i> Differentiators</div>
+        <h2>What Makes Us <span class="gradient-text">Different</span></h2>
+        <p>Our relentless focus on safety, quality, and customer experience ensures every project is completed with exceptional care.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+          <div class="card-title">Experienced Engineers</div>
+          <p class="card-text">Specialists in PLC programming, solar design, UPS systems, and electrical installations with 10+ years of hands-on experience.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-medal"></i></div>
+          <div class="card-title">Quality Commitment</div>
+          <p class="card-text">Inspection-driven work with premium ISI-certified materials, detailed drawings, and rigorous quality checks at every stage.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-heart"></i></div>
+          <div class="card-title">Client Trust</div>
+          <p class="card-text">Consistent positive feedback from residential homeowners and large industrial clients built over three decades of reliable service.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-clock"></i></div>
+          <div class="card-title">On-Time Delivery</div>
+          <p class="card-text">Strict project timelines, structured planning, and dedicated project managers ensure your job is done on schedule.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+          <div class="card-title">Safety Standards</div>
+          <p class="card-text">Full compliance with earthing standards, load calculations, insulation testing, and IS/IEC safety protocols on every project.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-wrench"></i></div>
+          <div class="card-title">After-Sales Support</div>
+          <p class="card-text">System testing, workmanship warranty, AMC plans, and emergency breakdown support for lasting system performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" data-aos="fade-up">
-  <div class="section-title"><h2>Company Timeline</h2><p>Key milestones from the founding to the latest automation and solar projects.</p></div>
-  <div class="grid grid-2">
-    <div class="card"><h3>2015</h3><p>Company founded with focus on residential electrical services.</p></div>
-    <div class="card"><h3>2018</h3><p>Expanded into solar installations and UPS systems for homes and businesses.</p></div>
-    <div class="card"><h3>2021</h3><p>Started industrial automation services with PLC and control panel solutions.</p></div>
-    <div class="card"><h3>2024</h3><p>Served 1,500+ projects and introduced advanced IoT-enabled energy monitoring.</p></div>
-  </div>
-</section>
+  <!-- Company Timeline -->
+  <section class="section" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-timeline"></i> Milestones</div>
+        <h2>Our <span class="gradient-text">Journey</span></h2>
+        <p>Key milestones from our founding to the most recent automation and solar projects.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot">95</div>
+          <div class="timeline-content">
+            <div class="timeline-year">1995</div>
+            <h3>Company Founded</h3>
+            <p>Started with focus on residential electrical services in Bhowra, Dhanbad — serving local homeowners with quality wiring and repair.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-dot">10</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2010</div>
+            <h3>Commercial Expansion</h3>
+            <p>Expanded into commercial electrical installations, distribution boards, and began serving shops, offices, and small businesses.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot">16</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2016</div>
+            <h3>Solar &amp; UPS Division</h3>
+            <p>Launched solar rooftop installations and UPS systems for homes and businesses, ahead of the renewable energy wave.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-dot">20</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2020</div>
+            <h3>Industrial Automation</h3>
+            <p>Started industrial automation services — PLC programming, SCADA, MCC panels, and factory control systems for Jharkhand industries.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot">26</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2026</div>
+            <h3>500+ Projects &amp; Growing</h3>
+            <p>Serving 500+ completed projects, IoT energy monitoring, smart home systems, and a dedicated 24×7 support team for industrial clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-surface">
+    <div class="section-inner">
+      <div class="cta-section" data-aos="fade-up">
+        <div class="section-tag" style="display:inline-flex;margin-bottom:1rem"><i class="fas fa-comments"></i> Get in Touch</div>
+        <h2>Let's Build Something <span class="gradient-text">Great Together</span></h2>
+        <p>Whether you need a simple electrical repair or a complex industrial automation system — we're ready to help.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact Us</a>
+          <a href="tel:+919122407756" class="btn btn-secondary"><i class="fas fa-phone"></i> +91 91224 07756</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="floating-actions">
-    <a href="tel:+919876543210" aria-label="Call Now"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919122407756" class="float-call float-pulse" aria-label="Call Now"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="float-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
   <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Janta Electricals</h4>
-        <p>Premium electrical, solar, and automation services across India. Trusted by homeowners, builders, and industries since 2015.</p>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><span class="brand-icon"><i class="fas fa-bolt"></i></span>Janta <span class="brand-accent">Electricals</span></a>
+          <p>Electrical repair, installation, solar, and industrial automation in Bhowra, Dhanbad, Jharkhand since 1995.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+            <a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a>
+            <a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a>
+            <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="residential.html"><i class="fas fa-chevron-right"></i> Residential</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> Industrial</a>
+            <a href="solar.html"><i class="fas fa-chevron-right"></i> Solar &amp; Backup</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> PLC &amp; Automation</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Bhowra, Dhanbad, Jharkhand</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+919122407756">+91 91224 07756</a></div>
+          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><a href="https://maps.app.goo.gl/kbHWJ4Wkmvz2FR5T6" target="_blank" rel="noreferrer">View on Google Maps</a></div>
+        </div>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="about.html">About Us</a><br>
-        <a href="projects.html">Projects</a><br>
-        <a href="contact.html">Contact</a><br>
-        <a href="gallery.html">Gallery</a>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="residential.html">Residential</a><br>
-        <a href="industrial.html">Industrial</a><br>
-        <a href="solar.html">Solar & Backup</a><br>
-        <a href="#">PLC & Automation</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p><i class="fas fa-map-marker-alt"></i> 22, Industrial Estate, Ahmedabad, Gujarat</p>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fas fa-envelope"></i> info@jantaelectricals.com</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Janta Electricals. All rights reserved.</span>
+        <span>Made with <i class="fas fa-heart" style="color:var(--red)"></i> in Dhanbad, Jharkhand</span>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Janta Electricals. All rights reserved.</div>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

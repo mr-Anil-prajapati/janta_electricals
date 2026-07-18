@@ -3,202 +3,341 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional residential electrical solutions for homes, apartments, villas, shops, and offices with smart home, safety inspection, solar, and UPS support.">
-  <meta name="keywords" content="Electrical Services, Industrial Automation, PLC Programming, Solar, UPS, Smart Home, Electrical Panels">
+  <meta name="description" content="Residential electrical services in Bhowra, Dhanbad — complete house wiring, smart home, solar, UPS, LED lighting, safety inspection, and more by Janta Electricals.">
+  <meta name="keywords" content="Residential Electrical, House Wiring, Smart Home, Solar, UPS, Dhanbad, Jharkhand">
   <meta property="og:title" content="Residential Electrical Services | Janta Electricals">
-  <meta property="og:description" content="Professional residential electrical solutions for homes, apartments, villas, shops, and offices with smart home, safety inspection, solar, and UPS support.">
+  <meta property="og:description" content="Professional residential electrical solutions for homes, apartments, and villas in Dhanbad, Jharkhand.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Residential Electrical Services | Janta Electricals">
-  <meta name="twitter:description" content="Professional residential electrical solutions for homes, apartments, villas, shops, and offices with smart home, safety inspection, solar, and UPS support.">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#00a8ff">
   <link rel="icon" href="assets/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <title>Residential Electrical Services | Janta Electricals</title>
 </head>
 <body>
-  <div class="topbar">
-    <div>Trusted electrical and automation partner for homes, factories, and solar systems.</div>
-    <div><i class="fas fa-phone"></i> +91 98765 43210</div>
+
+  <div id="page-loader">
+    <div class="loader-logo">⚡ Janta Electricals</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
+  <div id="scroll-progress"></div>
+
+  <div class="topbar">
+    <div><i class="fas fa-map-marker-alt"></i> Bhowra, Dhanbad, Jharkhand &nbsp;·&nbsp; Home Electrical Experts</div>
+    <div><a href="tel:+919122407756"><i class="fas fa-phone"></i> +91 91224 07756</a></div>
+  </div>
+
   <header class="site-header">
     <nav class="navbar">
-      <a class="brand" href="index.html">Janta Electricals</a>
-      <div class="nav-links">
-        <a href="index.html" class="">Home</a>
-        <a href="about.html" class="">About</a>
+      <a class="brand" href="index.html">
+        <span class="brand-icon"><i class="fas fa-bolt"></i></span>
+        Janta <span class="brand-accent">Electricals</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
         <a href="residential.html" class="active">Residential</a>
-        <a href="industrial.html" class="">Industrial</a>
-        <a href="solar.html" class="">Solar</a>
-        <a href="projects.html" class="">Projects</a>
-        <a href="gallery.html" class="">Gallery</a>
-        <a href="contact.html" class="">Contact</a>
-        <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="industrial.html">Industrial</a>
+        <a href="solar.html">Solar</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <button id="themeToggle" class="btn-theme" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-  
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy" data-aos="fade-up">
-      <div class="hero-badges"><span class="hero-badge">Home Electrical Experts</span><span class="hero-badge">Smart Home Ready</span></div>
-      <h1>Residential Electrical Services for Modern Homes</h1>
-      <p>Professional electrical solutions for homes, apartments, villas, shops, and offices. We deliver safe wiring, smart automation, and reliable backup systems.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary"><i class="fas fa-home"></i> Book Inspection</a>
-        <a href="tel:+919876543210" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Now</a>
+
+  <!-- Hero -->
+  <section class="hero" style="min-height:70vh">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><i class="fas fa-home"></i> Home Electrical Experts</div>
+        <h1>Residential Electrical Services for <span class="gradient-text">Modern Homes</span></h1>
+        <p>Professional electrical solutions for homes, apartments, villas, shops, and offices. We deliver safe wiring, smart automation, reliable backup systems, and beautiful lighting.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Book Inspection</a>
+          <a href="tel:+919122407756" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Now</a>
+          <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-item"><i class="fas fa-check-circle"></i> ISI-Certified Materials</span>
+          <span class="trust-item"><i class="fas fa-check-circle"></i> Service Warranty</span>
+          <span class="trust-item"><i class="fas fa-check-circle"></i> Same-Day Response</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80" alt="Modern residential electrical installation" loading="lazy">
+        </div>
       </div>
     </div>
-    <div class="hero-visual" data-aos="fade-left">
-      <div class="hero-image"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=80" alt="Modern residential electrical installation" loading="lazy"></div>
+  </section>
+
+  <!-- Core Services -->
+  <section class="section bg-surface" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-home"></i> Home Services</div>
+        <h2>Complete Home <span class="gradient-text">Electrical Care</span></h2>
+        <p>From wiring and lighting to smart home systems, we create safe, efficient homes with premium materials.</p>
+      </div>
+      <div class="grid grid-3" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-plug"></i></span>
+            <div><h3>Complete House Wiring</h3><p>New builds, extensions, and full rewiring with concealed conduit, ISI cables, and MCB distribution boards.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-rotate-left"></i></span>
+            <div><h3>Rewiring Old Houses</h3><p>Safe replacement of aging, damaged, or hazardous electrical wiring with modern protective systems.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-wifi"></i></span>
+            <div><h3>Smart Home Installation</h3><p>Intelligent lighting, scene control, touch panels, WiFi networks, and home entertainment wiring.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-sliders"></i></span>
+            <div><h3>Home Automation</h3><p>Automated fan, AC, and lighting control via smartphone or voice assistants. Retrofit any existing home.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-shield-halved"></i></span>
+            <div><h3>Electrical Safety Inspection</h3><p>Full home audit — earthing test, insulation check, load balancing, and safety recommendation report.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-battery-half"></i></span>
+            <div><h3>UPS Installation</h3><p>Online and offline UPS systems for computers, servers, medical equipment, and critical home loads.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-charging-station"></i></span>
+            <div><h3>Inverter Installation</h3><p>High-capacity inverter and battery bank installation for reliable backup during power outages.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-sun"></i></span>
+            <div><h3>Residential Solar</h3><p>Rooftop solar panel installation with net metering, monitoring, and hybrid battery backup options.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-lightbulb"></i></span>
+            <div><h3>LED Lighting Design</h3><p>Energy-efficient LED solutions — recessed, strip, cove, spotlight, and outdoor landscape lighting.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-fan"></i></span>
+            <div><h3>Fan &amp; Appliance Install</h3><p>Ceiling fans, exhaust fans, geysers, water pumps, AC points, and appliance wiring and installation.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-video"></i></span>
+            <div><h3>CCTV &amp; Security</h3><p>IP and analog CCTV installation, video door phones, intercom systems, and motion sensor lighting.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-bolt"></i></span>
+            <div><h3>Motor &amp; Pump Repair</h3><p>Diagnosis and repair of water pump motors, submersible pumps, and single-phase motor systems.</p></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section bg-surface">
-  <div class="section-title" data-aos="fade-up"><h2>Complete Home Electrical Care</h2><p>From wiring and lighting to smart home systems, we create safe, efficient homes with premium materials.</p></div>
-  <div class="grid grid-3" data-aos="fade-up" data-aos-delay="100">
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Complete House Wiring</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Rewiring Old Houses</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Smart Home Installation</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Home Automation</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Electrical Safety Inspection</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>UPS Installation</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Inverter Installation</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Battery Installation</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Solar Installation</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>LED Lighting</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Fan Installation</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-check"></i></span><div><h3>Motor Repair</h3></div></div></div>
-    
-  </div>
-</section>
+  <!-- Solution Packages -->
+  <section class="section" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-layer-group"></i> Solutions</div>
+        <h2>Residential <span class="gradient-text">Solution Packages</span></h2>
+        <p>Customized service bundles for every home and business space.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-house-user"></i></div>
+          <div class="card-title">Safety-First Wiring</div>
+          <p class="card-text">Secure wiring with earthing, lightning protection, MCB distribution boards, and RCCB protection for complete electrical safety in your home.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-brain"></i></div>
+          <div class="card-title">Smart Home Systems</div>
+          <p class="card-text">Intelligent lighting automation, CCTV, door phone, WiFi network infrastructure, and entertainment system setup for modern living.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-battery-full"></i></div>
+          <div class="card-title">Backup Power Package</div>
+          <p class="card-text">Comprehensive UPS, inverter, battery, and solar backup solutions that keep your home running during outages — sized for your exact load.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <div class="card-title">Annual Maintenance</div>
+          <p class="card-text">Preventive maintenance visits, emergency electrician service, full home inspections, and priority support for lasting electrical performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" data-aos="fade-up">
-  <div class="section-title"><h2>Residential Electrical Solutions</h2><p>Customized service packages for every home and business space.</p></div>
-  <div class="grid grid-2">
-    <div class="card"><h3>Safety-First Wiring</h3><p>Secure wiring, earthing, lightning protection and MCB distribution design for worry-free operation.</p></div>
-    <div class="card"><h3>Smart Home Systems</h3><p>Intelligent lighting, automation, CCTV, door phone, WiFi network and entertainment setup for modern living.</p></div>
-    <div class="card"><h3>Backup Power</h3><p>UPS, inverter, battery and solar backup solutions that keep homes running during outages.</p></div>
-    <div class="card"><h3>Maintenance & Support</h3><p>Annual maintenance, emergency electrician service, and full home inspections for lasting performance.</p></div>
-  </div>
-</section>
+  <!-- Full Coverage Tags -->
+  <section class="section bg-surface" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-list-check"></i> Full Coverage</div>
+        <h2>Every Home Electrical Need, <span class="gradient-text">Covered</span></h2>
+        <p>All common home electrical needs handled by our certified technicians.</p>
+      </div>
+      <div class="tech-tags" style="justify-content:center" data-aos="fade-up" data-aos-delay="100">
+        <span class="tech-tag">Fan Installation</span>
+        <span class="tech-tag">Ceiling Fan Repair</span>
+        <span class="tech-tag">Exhaust Fan</span>
+        <span class="tech-tag">Geyser Installation</span>
+        <span class="tech-tag">Water Pump</span>
+        <span class="tech-tag">Stabilizer Repair</span>
+        <span class="tech-tag">MCB Installation</span>
+        <span class="tech-tag">Distribution Board</span>
+        <span class="tech-tag">Earthing</span>
+        <span class="tech-tag">Lightning Protection</span>
+        <span class="tech-tag">TV Wall Mount</span>
+        <span class="tech-tag">LED TV Installation</span>
+        <span class="tech-tag">DTH Setup</span>
+        <span class="tech-tag">WiFi Router Install</span>
+        <span class="tech-tag">CCTV Installation</span>
+        <span class="tech-tag">Video Door Phone</span>
+        <span class="tech-tag">Door Bell</span>
+        <span class="tech-tag">Intercom</span>
+        <span class="tech-tag">Home Network</span>
+        <span class="tech-tag">Appliance Installation</span>
+        <span class="tech-tag">AC Point Wiring</span>
+        <span class="tech-tag">Submersible Pump</span>
+      </div>
+    </div>
+  </section>
 
-<section class="section bg-surface" data-aos="fade-up">
-  <div class="section-title"><h2>Our Residential Service Coverage</h2><p>All common home electrical needs handled by certified technicians.</p></div>
-  <div class="grid grid-4" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-    
-    <div class="card"><h3>Fan Installation</h3></div>
-    
-    <div class="card"><h3>Ceiling Fan Repair</h3></div>
-    
-    <div class="card"><h3>Exhaust Fan</h3></div>
-    
-    <div class="card"><h3>Geyser Installation</h3></div>
-    
-    <div class="card"><h3>Water Pump Installation</h3></div>
-    
-    <div class="card"><h3>Stabilizer Repair</h3></div>
-    
-    <div class="card"><h3>MCB Installation</h3></div>
-    
-    <div class="card"><h3>Distribution Board</h3></div>
-    
-    <div class="card"><h3>Earthing</h3></div>
-    
-    <div class="card"><h3>Lightning Protection</h3></div>
-    
-    <div class="card"><h3>TV Wall Mount</h3></div>
-    
-    <div class="card"><h3>LED TV Installation</h3></div>
-    
-    <div class="card"><h3>DTH Setup</h3></div>
-    
-    <div class="card"><h3>WiFi Router Installation</h3></div>
-    
-    <div class="card"><h3>CCTV Installation</h3></div>
-    
-    <div class="card"><h3>Video Door Phone</h3></div>
-    
-    <div class="card"><h3>Door Bell</h3></div>
-    
-    <div class="card"><h3>Intercom</h3></div>
-    
-    <div class="card"><h3>Home Network Setup</h3></div>
-    
-    <div class="card"><h3>Appliance Installation</h3></div>
-    
-  </div>
-</section>
+  <!-- Why Homeowners Trust Us -->
+  <section class="section" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-award"></i> Trust Signals</div>
+        <h2>Why Homeowners <span class="gradient-text">Trust Us</span></h2>
+        <p>Transparent pricing, fast response, and local residential expertise since 1995.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-clock"></i></div>
+          <div class="card-title">Prompt Site Survey</div>
+          <p class="card-text">Engineer-led home inspection and detailed written recommendation within 24 hours of your inquiry.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-star"></i></div>
+          <div class="card-title">Quality Components</div>
+          <p class="card-text">We use only ISI-marked and internationally standard electrical components — no cost-cutting on safety.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-file-contract"></i></div>
+          <div class="card-title">Workmanship Warranty</div>
+          <p class="card-text">Service warranty and post-installation follow-up support for your complete peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" data-aos="fade-up">
-  <div class="section-title"><h2>Why Homeowners Trust Us</h2><p>Transparent pricing, fast response, and local residential expertise.</p></div>
-  <div class="grid grid-3">
-    <div class="card"><h3>Prompt Site Survey</h3><p>Engineer-led inspections and recommendations within 24 hours.</p></div>
-    <div class="card"><h3>Quality Components</h3><p>ISI and international standard equipment for every installation.</p></div>
-    <div class="card"><h3>Guaranteed Work</h3><p>Service warranty and post-installation support for your peace of mind.</p></div>
-  </div>
-</section>
-
-<section class="section bg-surface" data-aos="fade-up">
-  <div class="section-title"><h2>Ready for a Safer Home?</h2><p>Request a free home electrical assessment and quote from our specialists.</p></div>
-  <div class="hero-actions"><a href="contact.html" class="btn btn-primary"><i class="fas fa-file-invoice"></i> Free Quote</a><a href="tel:+919876543210" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Us</a></div>
-</section>
+  <!-- CTA -->
+  <section class="section bg-surface">
+    <div class="section-inner">
+      <div class="cta-section" data-aos="fade-up">
+        <div class="section-tag" style="display:inline-flex;margin-bottom:1rem"><i class="fas fa-home"></i> Free Assessment</div>
+        <h2>Ready for a <span class="gradient-text">Safer Home?</span></h2>
+        <p>Request a free home electrical assessment and quote from our certified specialists today.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-file-invoice"></i> Get Free Quote</a>
+          <a href="tel:+919122407756" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Us Now</a>
+          <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="floating-actions">
-    <a href="tel:+919876543210" aria-label="Call Now"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919122407756" class="float-call float-pulse" aria-label="Call Now"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="float-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
   <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Janta Electricals</h4>
-        <p>Premium electrical, solar, and automation services across India. Trusted by homeowners, builders, and industries since 2015.</p>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><span class="brand-icon"><i class="fas fa-bolt"></i></span>Janta <span class="brand-accent">Electricals</span></a>
+          <p>Electrical repair, installation, solar, and industrial automation in Bhowra, Dhanbad, Jharkhand since 1995.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+            <a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a>
+            <a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a>
+            <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="residential.html"><i class="fas fa-chevron-right"></i> Residential</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> Industrial</a>
+            <a href="solar.html"><i class="fas fa-chevron-right"></i> Solar &amp; Backup</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> PLC &amp; Automation</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Bhowra, Dhanbad, Jharkhand</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+919122407756">+91 91224 07756</a></div>
+          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><a href="https://maps.app.goo.gl/kbHWJ4Wkmvz2FR5T6" target="_blank" rel="noreferrer">View on Google Maps</a></div>
+        </div>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="about.html">About Us</a><br>
-        <a href="projects.html">Projects</a><br>
-        <a href="contact.html">Contact</a><br>
-        <a href="gallery.html">Gallery</a>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="residential.html">Residential</a><br>
-        <a href="industrial.html">Industrial</a><br>
-        <a href="solar.html">Solar & Backup</a><br>
-        <a href="#">PLC & Automation</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p><i class="fas fa-map-marker-alt"></i> 22, Industrial Estate, Ahmedabad, Gujarat</p>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fas fa-envelope"></i> info@jantaelectricals.com</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Janta Electricals. All rights reserved.</span>
+        <span>Made with <i class="fas fa-heart" style="color:var(--red)"></i> in Dhanbad, Jharkhand</span>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Janta Electricals. All rights reserved.</div>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

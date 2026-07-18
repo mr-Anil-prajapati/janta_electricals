@@ -3,129 +3,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore our project gallery featuring residential wiring, industrial automation, solar installations, and control panel systems.">
-  <meta name="keywords" content="Electrical Services, Industrial Automation, PLC Programming, Solar, UPS, Smart Home, Electrical Panels">
-  <meta property="og:title" content="Projects Gallery | Janta Electricals">
-  <meta property="og:description" content="Explore our project gallery featuring residential wiring, industrial automation, solar installations, and control panel systems.">
+  <meta name="description" content="Explore Janta Electricals project portfolio — residential wiring, industrial PLC automation, solar installations, and control panel systems in Jharkhand.">
+  <meta name="keywords" content="Projects, Portfolio, PLC Panels, Solar, Industrial Automation, Dhanbad, Jharkhand">
+  <meta property="og:title" content="Projects Portfolio | Janta Electricals">
+  <meta property="og:description" content="Browse our project portfolio — industrial automation, solar, and electrical installations in Jharkhand.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Projects Gallery | Janta Electricals">
-  <meta name="twitter:description" content="Explore our project gallery featuring residential wiring, industrial automation, solar installations, and control panel systems.">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#00a8ff">
   <link rel="icon" href="assets/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <title>Projects Gallery | Janta Electricals</title>
+  <title>Projects Portfolio | Janta Electricals</title>
 </head>
 <body>
-  <div class="topbar">
-    <div>Trusted electrical and automation partner for homes, factories, and solar systems.</div>
-    <div><i class="fas fa-phone"></i> +91 98765 43210</div>
+
+  <div id="page-loader">
+    <div class="loader-logo">⚡ Janta Electricals</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
+  <div id="scroll-progress"></div>
+
+  <div class="topbar">
+    <div><i class="fas fa-folder-open"></i> Project Portfolio — Residential, Industrial &amp; Solar</div>
+    <div><a href="tel:+919122407756"><i class="fas fa-phone"></i> +91 91224 07756</a></div>
+  </div>
+
   <header class="site-header">
     <nav class="navbar">
-      <a class="brand" href="index.html">Janta Electricals</a>
-      <div class="nav-links">
-        <a href="index.html" class="">Home</a>
-        <a href="about.html" class="">About</a>
-        <a href="residential.html" class="">Residential</a>
-        <a href="industrial.html" class="">Industrial</a>
-        <a href="solar.html" class="">Solar</a>
+      <a class="brand" href="index.html">
+        <span class="brand-icon"><i class="fas fa-bolt"></i></span>
+        Janta <span class="brand-accent">Electricals</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="residential.html">Residential</a>
+        <a href="industrial.html">Industrial</a>
+        <a href="solar.html">Solar</a>
         <a href="projects.html" class="active">Projects</a>
-        <a href="gallery.html" class="">Gallery</a>
-        <a href="contact.html" class="">Contact</a>
-        <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <button id="themeToggle" class="btn-theme" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-  
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy" data-aos="fade-up">
-      <div class="hero-badges"><span class="hero-badge">Project Showcase</span><span class="hero-badge">Residential to Industrial</span></div>
-      <h1>Projects Gallery with Real Solutions</h1>
-      <p>Browse our latest electrical, solar, automation, and control panel installations across homes and industries.</p>
-      <div class="hero-actions"><a href="contact.html" class="btn btn-primary"><i class="fas fa-file-contract"></i> Talk About Your Project</a><a href="gallery.html" class="btn btn-secondary"><i class="fas fa-image"></i> See More Photos</a></div>
+
+  <!-- Hero -->
+  <section class="hero" style="min-height:60vh">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><i class="fas fa-folder-open"></i> Project Showcase</div>
+        <h1>Our <span class="gradient-text">Projects Portfolio</span></h1>
+        <p>Browse our latest electrical, solar, automation, and control panel installations — real work delivered for real clients across Jharkhand.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-comments"></i> Talk About Your Project</a>
+          <a href="gallery.html" class="btn btn-secondary"><i class="fas fa-images"></i> See Full Gallery</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap">
+          <img src="assets/images/projects/album-two-001.jpg" alt="Industrial automation project by Janta Electricals" loading="eager">
+        </div>
+      </div>
     </div>
-    <div class="hero-visual" data-aos="fade-left"><div class="hero-image"><img src="assets/images/projects/album-two-001.jpg" alt="Industrial automation project machinery" loading="lazy"></div></div>
-  </div>
-</section>
+  </section>
 
-<section class="section bg-surface" data-aos="fade-up">
-  <div class="section-title"><h2>Filter by Project Type</h2><p>Select the category to explore relevant installations and case studies.</p></div>
-  <div class="hero-actions" style="flex-wrap: wrap; gap:0.75rem; margin-top:1rem;" data-aos="fade-up" data-aos-delay="100">
-    <button class="btn btn-secondary filter-btn active" data-filter="all">All</button>
-    <button class="btn btn-secondary filter-btn" data-filter="industrial">Industrial</button>
-    <button class="btn btn-secondary filter-btn" data-filter="panel">Panels</button>
-    <button class="btn btn-secondary filter-btn" data-filter="automation">Automation</button>
-  </div>
-  <div class="grid grid-3" style="margin-top:1.5rem;" data-aos="fade-up" data-aos-delay="150">
-    
-    <div class="project-card" data-category="industrial automation"><img src="assets/images/projects/album-two-001.jpg" alt="Industrial machine automation project" loading="lazy"><div class="project-overlay"><div><span class="badge">Automation</span><h3>Machine Automation</h3></div></div></div>
-    
-    <div class="project-card" data-category="industrial panel"><img src="assets/images/gallery/control-panel-overview.jpg" alt="Industrial electrical control panel" loading="lazy"><div class="project-overlay"><div><span class="badge">Panels</span><h3>Control Panel Work</h3></div></div></div>
-    
-    <div class="project-card" data-category="industrial automation"><img src="assets/images/gallery/siemens-io-system.jpg" alt="Industrial I/O system" loading="lazy"><div class="project-overlay"><div><span class="badge">Automation</span><h3>Industrial I/O System</h3></div></div></div>
-    
-    <div class="project-card" data-category="panel"><img src="assets/images/gallery/siemens-plc-panel.jpg" alt="Siemens PLC panel installation" loading="lazy"><div class="project-overlay"><div><span class="badge">Panels</span><h3>PLC Panel Installation</h3></div></div></div>
-    
-    <div class="project-card" data-category="industrial automation"><img src="assets/images/gallery/drive-wiring.jpg" alt="Industrial drive wiring" loading="lazy"><div class="project-overlay"><div><span class="badge">Industrial</span><h3>Drive Wiring & Commissioning</h3></div></div></div>
-    
-    <div class="project-card" data-category="panel"><img src="assets/images/gallery/terminal-wiring.jpg" alt="Labeled terminal wiring" loading="lazy"><div class="project-overlay"><div><span class="badge">Panels</span><h3>Terminal Wiring</h3></div></div></div>
-    
-  </div>
-</section>
+  <!-- Stats -->
+  <section class="section bg-surface">
+    <div class="section-inner">
+      <div class="stats-grid" data-aos="fade-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="500" data-suffix="+">500+</span>
+          <span class="stat-label">Total Projects</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="150" data-suffix="+">150+</span>
+          <span class="stat-label">Industrial Automation</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="200" data-suffix="+">200+</span>
+          <span class="stat-label">Solar Installations</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="98" data-suffix="%">98%</span>
+          <span class="stat-label">On-Time Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" data-aos="fade-up">
-  <div class="section-title"><h2>Case Study Highlights</h2><p>Our comprehensive services create safe, efficient and energy-smart installations.</p></div>
-  <div class="grid grid-3">
-    <div class="card"><h3>Factory PLC Retrofit</h3><p>Retrofit of legacy control panels with new Siemens PLC and HMI for higher uptime.</p></div>
-    <div class="card"><h3>Residential Solar & Backup</h3><p>Hybrid solar system with battery and inverter for uninterrupted power supply.</p></div>
-    <div class="card"><h3>Smart Home Upgrade</h3><p>Complete wiring, lighting, CCTV and automation for premium home comfort.</p></div>
-  </div>
-</section>
+  <!-- Filterable Gallery -->
+  <section class="section" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-filter"></i> Filter Projects</div>
+        <h2>Browse by <span class="gradient-text">Project Type</span></h2>
+        <p>Select a category to explore relevant installations and case studies.</p>
+      </div>
+
+      <div class="filter-bar" data-aos="fade-up" data-aos-delay="50">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="industrial">Industrial</button>
+        <button class="filter-btn" data-filter="panel">Panels</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="solar">Solar</button>
+      </div>
+
+      <div class="grid grid-3" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="project-card" data-category="industrial automation">
+          <img src="assets/images/projects/album-two-001.jpg" alt="Industrial machine automation project" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-primary">Automation</span>
+              <h3>Machine Automation System</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="industrial panel">
+          <img src="assets/images/gallery/control-panel-overview.jpg" alt="Industrial electrical control panel" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-accent">Panels</span>
+              <h3>Control Panel Work</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="industrial automation">
+          <img src="assets/images/gallery/siemens-io-system.jpg" alt="Industrial I/O system" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-primary">Automation</span>
+              <h3>Industrial I/O System</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="panel automation">
+          <img src="assets/images/gallery/siemens-plc-panel.jpg" alt="Siemens PLC panel installation" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-primary">PLC Panel</span>
+              <h3>Siemens PLC Installation</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="industrial">
+          <img src="assets/images/gallery/drive-wiring.jpg" alt="Industrial drive wiring" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-green">Industrial</span>
+              <h3>Drive Wiring &amp; Commissioning</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="panel">
+          <img src="assets/images/gallery/terminal-wiring.jpg" alt="Labeled terminal wiring" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-accent">Panels</span>
+              <h3>Precision Terminal Wiring</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="solar">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80" alt="Residential solar installation" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-accent" style="background:var(--accent)">Solar</span>
+              <h3>5 kW Residential Rooftop Solar</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="automation panel">
+          <img src="assets/images/projects/album-two-001.jpg" alt="Automation control room" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-primary">SCADA</span>
+              <h3>SCADA Monitoring System</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="solar">
+          <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=800&q=80" alt="Commercial solar panels" loading="lazy">
+          <div class="project-overlay">
+            <div>
+              <span class="badge badge-accent" style="background:var(--accent)">Solar</span>
+              <h3>50 kW Commercial Solar</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section bg-surface" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-file-alt"></i> Case Studies</div>
+        <h2>Project <span class="gradient-text">Highlights</span></h2>
+        <p>Our comprehensive services create safe, efficient, and energy-smart installations.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-microchip"></i></div>
+          <div class="card-title">Factory PLC Retrofit</div>
+          <p class="card-text">Replaced legacy relay-based control with a Siemens S7-1500 PLC and WinCC SCADA system — resulting in 35% improved uptime and zero unplanned stops.</p>
+          <div class="tech-tags" style="margin-top:0.75rem">
+            <span class="tech-tag">S7-1500</span>
+            <span class="tech-tag">WinCC</span>
+            <span class="tech-tag">Profinet</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background:var(--accent-soft);color:var(--accent)"><i class="fas fa-sun"></i></div>
+          <div class="card-title">Hybrid Solar &amp; Backup</div>
+          <p class="card-text">Designed and installed a 10 kW hybrid solar system with 20 kWh lithium battery bank for a commercial building — 65% electricity bill reduction achieved.</p>
+          <div class="tech-tags" style="margin-top:0.75rem">
+            <span class="tech-tag">10 kW Hybrid</span>
+            <span class="tech-tag">Lithium Battery</span>
+            <span class="tech-tag">Net Metering</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background:var(--green-soft);color:var(--green)"><i class="fas fa-home"></i></div>
+          <div class="card-title">Smart Home Upgrade</div>
+          <p class="card-text">Complete electrical rewiring, LED lighting design, CCTV, home automation, and solar installation for a premium villa in Dhanbad.</p>
+          <div class="tech-tags" style="margin-top:0.75rem">
+            <span class="tech-tag">Smart Home</span>
+            <span class="tech-tag">CCTV</span>
+            <span class="tech-tag">Solar 5 kW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="cta-section" data-aos="fade-up">
+        <div class="section-tag" style="display:inline-flex;margin-bottom:1rem"><i class="fas fa-handshake"></i> Your Project</div>
+        <h2>Have a Project in <span class="gradient-text">Mind?</span></h2>
+        <p>From small home repairs to large industrial automation systems — let's discuss your project and deliver the best solution.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+          <a href="gallery.html" class="btn btn-secondary"><i class="fas fa-images"></i> View Full Gallery</a>
+          <a href="tel:+919122407756" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="floating-actions">
-    <a href="tel:+919876543210" aria-label="Call Now"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919122407756" class="float-call float-pulse" aria-label="Call Now"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="float-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
   <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Janta Electricals</h4>
-        <p>Premium electrical, solar, and automation services across India. Trusted by homeowners, builders, and industries since 2015.</p>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><span class="brand-icon"><i class="fas fa-bolt"></i></span>Janta <span class="brand-accent">Electricals</span></a>
+          <p>Electrical repair, installation, solar, and industrial automation in Bhowra, Dhanbad, Jharkhand since 1995.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+            <a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a>
+            <a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a>
+            <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="residential.html"><i class="fas fa-chevron-right"></i> Residential</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> Industrial</a>
+            <a href="solar.html"><i class="fas fa-chevron-right"></i> Solar &amp; Backup</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> PLC &amp; Automation</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Bhowra, Dhanbad, Jharkhand</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+919122407756">+91 91224 07756</a></div>
+          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><a href="https://maps.app.goo.gl/kbHWJ4Wkmvz2FR5T6" target="_blank" rel="noreferrer">View on Google Maps</a></div>
+        </div>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="about.html">About Us</a><br>
-        <a href="projects.html">Projects</a><br>
-        <a href="contact.html">Contact</a><br>
-        <a href="gallery.html">Gallery</a>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="residential.html">Residential</a><br>
-        <a href="industrial.html">Industrial</a><br>
-        <a href="solar.html">Solar & Backup</a><br>
-        <a href="#">PLC & Automation</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p><i class="fas fa-map-marker-alt"></i> 22, Industrial Estate, Ahmedabad, Gujarat</p>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fas fa-envelope"></i> info@jantaelectricals.com</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Janta Electricals. All rights reserved.</span>
+        <span>Made with <i class="fas fa-heart" style="color:var(--red)"></i> in Dhanbad, Jharkhand</span>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Janta Electricals. All rights reserved.</div>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

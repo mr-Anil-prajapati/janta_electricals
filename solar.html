@@ -3,144 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Solar and power backup solutions for residential, commercial, and industrial needs with hybrid systems, battery backup, UPS, and energy saving design.">
-  <meta name="keywords" content="Electrical Services, Industrial Automation, PLC Programming, Solar, UPS, Smart Home, Electrical Panels">
-  <meta property="og:title" content="Solar & Power Backup | Janta Electricals">
-  <meta property="og:description" content="Solar and power backup solutions for residential, commercial, and industrial needs with hybrid systems, battery backup, UPS, and energy saving design.">
+  <meta name="description" content="Solar rooftop installation and power backup solutions — on-grid, off-grid, hybrid solar, UPS, battery backup, and energy monitoring for homes and businesses in Jharkhand.">
+  <meta name="keywords" content="Solar Installation, Solar Rooftop, UPS, Battery Backup, Hybrid Solar, Dhanbad, Jharkhand">
+  <meta property="og:title" content="Solar &amp; Power Backup Solutions | Janta Electricals">
+  <meta property="og:description" content="Solar rooftop and power backup systems for residential, commercial, and industrial clients in Jharkhand.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Solar & Power Backup | Janta Electricals">
-  <meta name="twitter:description" content="Solar and power backup solutions for residential, commercial, and industrial needs with hybrid systems, battery backup, UPS, and energy saving design.">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#00a8ff">
   <link rel="icon" href="assets/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <title>Solar & Power Backup | Janta Electricals</title>
+  <title>Solar &amp; Power Backup Solutions | Janta Electricals</title>
 </head>
 <body>
-  <div class="topbar">
-    <div>Trusted electrical and automation partner for homes, factories, and solar systems.</div>
-    <div><i class="fas fa-phone"></i> +91 98765 43210</div>
+
+  <div id="page-loader">
+    <div class="loader-logo">⚡ Janta Electricals</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
+  <div id="scroll-progress"></div>
+
+  <div class="topbar">
+    <div><i class="fas fa-sun"></i> Solar &amp; Power Backup Specialists — Bhowra, Dhanbad, Jharkhand</div>
+    <div><a href="tel:+919122407756"><i class="fas fa-phone"></i> +91 91224 07756</a></div>
+  </div>
+
   <header class="site-header">
     <nav class="navbar">
-      <a class="brand" href="index.html">Janta Electricals</a>
-      <div class="nav-links">
-        <a href="index.html" class="">Home</a>
-        <a href="about.html" class="">About</a>
-        <a href="residential.html" class="">Residential</a>
-        <a href="industrial.html" class="">Industrial</a>
+      <a class="brand" href="index.html">
+        <span class="brand-icon"><i class="fas fa-bolt"></i></span>
+        Janta <span class="brand-accent">Electricals</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="residential.html">Residential</a>
+        <a href="industrial.html">Industrial</a>
         <a href="solar.html" class="active">Solar</a>
-        <a href="projects.html" class="">Projects</a>
-        <a href="gallery.html" class="">Gallery</a>
-        <a href="contact.html" class="">Contact</a>
-        <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <button id="themeToggle" class="btn-theme" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-  
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy" data-aos="fade-up">
-      <div class="hero-badges"><span class="hero-badge">Renewable Energy</span><span class="hero-badge">Backup Power</span></div>
-      <h1>Solar & Power Backup Solutions</h1>
-      <p>Residential Solar, Commercial Solar, Hybrid Systems, UPS installation, battery replacement, and energy-efficient power backup.</p>
-      <div class="hero-actions"><a href="contact.html" class="btn btn-primary"><i class="fas fa-solar-panel"></i> Get Solar Design</a><a href="tel:+919876543210" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Solar Team</a></div>
+
+  <!-- Hero -->
+  <section class="hero" style="min-height:75vh">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-glow" style="background:radial-gradient(ellipse 60% 50% at 70% 50%, rgba(245,166,35,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 30% 60%, rgba(0,168,255,0.06) 0%, transparent 60%);"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow" style="background:var(--accent-soft);border-color:rgba(245,166,35,0.3);color:var(--accent)"><i class="fas fa-solar-panel"></i> Renewable Energy Experts</div>
+        <h1>Solar &amp; Power Backup <span class="gradient-text">Solutions</span></h1>
+        <p>On-grid, off-grid, and hybrid solar rooftop systems — complete with battery backup, UPS support, net metering, and real-time energy monitoring for homes and businesses.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary" style="background:var(--grad-accent);box-shadow:var(--shadow-accent)"><i class="fas fa-solar-panel"></i> Get Solar Design</a>
+          <a href="tel:+919122407756" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Solar Team</a>
+          <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-item"><i class="fas fa-check-circle"></i> MNRE Compliant</span>
+          <span class="trust-item"><i class="fas fa-check-circle"></i> Net Metering Support</span>
+          <span class="trust-item"><i class="fas fa-check-circle"></i> 25-Year Panel Warranty</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-badge-float badge-1" style="--accent:var(--accent)">
+          <i class="fas fa-leaf" style="color:var(--green)"></i>
+          <div>
+            <div style="font-size:0.7rem;color:var(--muted)">SAVINGS</div>
+            Up to 70% Bill Cut
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80" alt="Solar panel rooftop installation" loading="lazy">
+        </div>
+        <div class="hero-badge-float badge-2">
+          <i class="fas fa-sun"></i>
+          <div>
+            <div style="font-size:0.7rem;color:var(--muted)">CAPACITY</div>
+            1 kW – 100 kW+
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hero-visual" data-aos="fade-left"><div class="hero-image"><img src="https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?auto=format&fit=crop&w=1000&q=80" alt="Solar panel installation" loading="lazy"></div></div>
-  </div>
-</section>
+  </section>
 
-<section class="section bg-surface" data-aos="fade-up">
-  <div class="section-title"><h2>Solar & Backup Services</h2><p>Complete energy solutions with solar rooftop systems, battery backup, and UPS support.</p></div>
-  <div class="grid grid-3">
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Residential Solar</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Commercial Solar</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Industrial Solar</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>On Grid</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Off Grid</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Hybrid Solar</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Solar Panels</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Battery Backup</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>UPS Repair</h3></div></div></div>
-    
-    <div class="card"><div class="service-card"><span class="icon"><i class="fas fa-sun"></i></span><div><h3>Energy Saving</h3></div></div></div>
-    
-  </div>
-</section>
+  <!-- Stats -->
+  <section class="section bg-surface">
+    <div class="section-inner">
+      <div class="stats-grid" data-aos="fade-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="200" data-suffix="+">200+</span>
+          <span class="stat-label">Solar Installations</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="500" data-suffix=" kW+">500 kW+</span>
+          <span class="stat-label">Total Capacity Installed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="70" data-suffix="%">70%</span>
+          <span class="stat-label">Avg Bill Reduction</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="25" data-suffix=" Yr">25 Yr</span>
+          <span class="stat-label">Panel Performance Warranty</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" data-aos="fade-up">
-  <div class="section-title"><h2>Why Choose Solar Backup</h2><p>Reliable power delivery, lower energy costs, and uninterrupted operations for homes and businesses.</p></div>
-  <div class="grid grid-2">
-    <div class="card"><h3>Customized Solar Systems</h3><p>Tailored on-grid, off-grid and hybrid solutions for rooftop and commercial installations.</p></div>
-    <div class="card"><h3>Battery & UPS Integration</h3><p>Solar battery backup and UPS systems that keep critical loads running during outages.</p></div>
-  </div>
-</section>
+  <!-- System Types -->
+  <section class="section" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag" style="background:var(--accent-soft);border-color:rgba(245,166,35,0.3);color:var(--accent)"><i class="fas fa-sun"></i> System Types</div>
+        <h2>Solar System <span class="gradient-text">Options</span></h2>
+        <p>We design the right system for your energy needs and budget — from simple rooftop solar to full hybrid energy solutions.</p>
+      </div>
+      <div class="grid grid-3" data-aos="fade-up" data-aos-delay="100">
 
-<section class="section bg-surface" data-aos="fade-up">
-  <div class="section-title"><h2>Solar Project Gallery</h2><p>High-quality installations with premium solar modules and professional mounting.</p></div>
-  <div class="grid grid-3">
-    <div class="image-card"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=80" alt="Rooftop solar" loading="lazy"><h3>Residential Rooftop</h3></div>
-    <div class="image-card"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80" alt="Commercial solar" loading="lazy"><h3>Commercial Panels</h3></div>
-    <div class="image-card"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=900&q=80" alt="Solar inverter setup" loading="lazy"><h3>Battery Backup</h3></div>
-  </div>
-</section>
+        <div class="card" style="border-color:rgba(245,166,35,0.2)">
+          <div class="card-icon" style="background:var(--accent-soft);color:var(--accent)"><i class="fas fa-plug-circle-bolt"></i></div>
+          <div class="card-title">On-Grid Solar</div>
+          <p class="card-text">Grid-connected solar systems with net metering — sell excess power back to the utility and reduce your electricity bills to near-zero.</p>
+          <div class="tech-tags" style="margin-top:0.75rem">
+            <span class="tech-tag">Net Metering</span>
+            <span class="tech-tag">No Battery Needed</span>
+            <span class="tech-tag">Fastest ROI</span>
+          </div>
+        </div>
 
-<section class="section" data-aos="fade-up">
-  <div class="section-title"><h2>Solar Consultation</h2><p>Calculate the ideal solar system and backup plan for your energy needs.</p></div>
-  <div class="hero-actions"><a href="contact.html" class="btn btn-primary"><i class="fas fa-calculator"></i> Schedule Survey</a><a href="tel:+919876543210" class="btn btn-secondary"><i class="fas fa-phone"></i> Talk to Experts</a></div>
-</section>
+        <div class="card" style="border-color:rgba(0,208,132,0.2)">
+          <div class="card-icon" style="background:var(--green-soft);color:var(--green)"><i class="fas fa-battery-full"></i></div>
+          <div class="card-title">Off-Grid Solar</div>
+          <p class="card-text">Fully independent solar systems with battery storage — ideal for remote locations, farms, or areas with unreliable grid power.</p>
+          <div class="tech-tags" style="margin-top:0.75rem">
+            <span class="tech-tag">100% Independent</span>
+            <span class="tech-tag">Battery Storage</span>
+            <span class="tech-tag">Remote Locations</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:var(--border-strong)">
+          <div class="card-icon"><i class="fas fa-arrows-rotate"></i></div>
+          <div class="card-title">Hybrid Solar</div>
+          <p class="card-text">Best of both worlds — solar with battery backup and grid connection. Powers your loads from solar, stores excess, and pulls grid when needed.</p>
+          <div class="tech-tags" style="margin-top:0.75rem">
+            <span class="tech-tag">Solar + Battery + Grid</span>
+            <span class="tech-tag">Zero Power Cut</span>
+            <span class="tech-tag">Smart Management</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Service List -->
+  <section class="section bg-surface" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-list"></i> All Services</div>
+        <h2>Complete Solar &amp; Backup <span class="gradient-text">Services</span></h2>
+        <p>From design and installation to maintenance and monitoring — we handle every aspect of your solar journey.</p>
+      </div>
+      <div class="grid grid-3" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-home"></i></span>
+            <div><h3>Residential Solar</h3><p>1–10 kW rooftop systems for homes, apartments, and independent houses with full documentation and net metering.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-building"></i></span>
+            <div><h3>Commercial Solar</h3><p>10–100 kW systems for offices, shops, schools, hospitals, and commercial complexes with ROI analysis.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-industry"></i></span>
+            <div><h3>Industrial Solar</h3><p>100 kW+ captive power generation for factories and industrial facilities — significant peak demand reduction.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-solar-panel"></i></span>
+            <div><h3>Panel Supply &amp; Install</h3><p>Tier-1 monocrystalline and polycrystalline panels — Waaree, Adani, Vikram Solar — with mounting structures.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-car-battery"></i></span>
+            <div><h3>Battery Backup Systems</h3><p>Lead-acid and lithium-ion battery banks — sized for critical load backup with smart BMS integration.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-server"></i></span>
+            <div><h3>UPS Repair &amp; Service</h3><p>Online, offline, and line-interactive UPS installation, battery replacement, and AMC for all brands.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-gauge-high"></i></span>
+            <div><h3>Energy Monitoring</h3><p>IoT-based real-time solar generation and consumption monitoring dashboards accessible via mobile app.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-leaf"></i></span>
+            <div><h3>Energy Efficiency Audit</h3><p>Complete energy consumption audit — identify savings, optimize loads, and maximize solar ROI.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="service-card">
+            <span class="icon"><i class="fas fa-wrench"></i></span>
+            <div><h3>Solar AMC &amp; Cleaning</h3><p>Annual maintenance contracts — panel cleaning, inverter checks, wiring inspection, and performance reports.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Solar -->
+  <section class="section" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-star"></i> Benefits</div>
+        <h2>Why Choose <span class="gradient-text">Solar Energy?</span></h2>
+        <p>Solar power delivers long-term financial savings, energy independence, and environmental benefits.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-icon" style="background:var(--accent-soft);color:var(--accent)"><i class="fas fa-rupee-sign"></i></div>
+          <div class="card-title">Reduced Electricity Bills</div>
+          <p class="card-text">Most homes and businesses see 50–70% reduction in electricity bills within the first month of solar installation — with full payback in 4–6 years.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background:var(--green-soft);color:var(--green)"><i class="fas fa-leaf"></i></div>
+          <div class="card-title">Clean, Green Energy</div>
+          <p class="card-text">Solar power generates zero emissions — reduce your carbon footprint and contribute to India's clean energy mission while enjoying reliable power.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+          <div class="card-title">Energy Independence</div>
+          <p class="card-text">With battery backup and hybrid systems, you're protected against power cuts, grid failures, and rising electricity tariffs — complete energy security.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="card-title">Government Subsidies</div>
+          <p class="card-text">We assist with MNRE subsidy applications under PM-KUSUM and state solar schemes — maximizing your financial benefit from solar adoption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Gallery -->
+  <section class="section bg-surface" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-title">
+        <div class="section-tag"><i class="fas fa-images"></i> Gallery</div>
+        <h2>Solar Project <span class="gradient-text">Gallery</span></h2>
+        <p>High-quality installations with premium solar modules and professional mounting structures.</p>
+      </div>
+      <div class="grid grid-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=80" alt="Residential rooftop solar installation" loading="lazy">
+          <div class="image-card-overlay"><h3>Residential Rooftop — 5 kW</h3></div>
+        </div>
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80" alt="Commercial solar panels" loading="lazy">
+          <div class="image-card-overlay"><h3>Commercial Installation — 50 kW</h3></div>
+        </div>
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=900&q=80" alt="Solar inverter and battery backup" loading="lazy">
+          <div class="image-card-overlay"><h3>Hybrid Battery Backup System</h3></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="cta-section" data-aos="fade-up">
+        <div class="section-tag" style="display:inline-flex;margin-bottom:1rem;background:var(--accent-soft);color:var(--accent)"><i class="fas fa-calculator"></i> Free Consultation</div>
+        <h2>Start Your <span class="gradient-text">Solar Journey</span> Today</h2>
+        <p>Our solar experts will calculate your ideal system size, expected savings, and ROI — completely free of charge.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a href="contact.html" class="btn btn-primary" style="background:var(--grad-accent);box-shadow:var(--shadow-accent)"><i class="fas fa-calculator"></i> Schedule Free Survey</a>
+          <a href="tel:+919122407756" class="btn btn-secondary"><i class="fas fa-phone"></i> Talk to Solar Experts</a>
+          <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="floating-actions">
-    <a href="tel:+919876543210" aria-label="Call Now"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919122407756" class="float-call float-pulse" aria-label="Call Now"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919122407756" target="_blank" rel="noreferrer" class="float-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
   <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Janta Electricals</h4>
-        <p>Premium electrical, solar, and automation services across India. Trusted by homeowners, builders, and industries since 2015.</p>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><span class="brand-icon"><i class="fas fa-bolt"></i></span>Janta <span class="brand-accent">Electricals</span></a>
+          <p>Electrical repair, installation, solar, and industrial automation in Bhowra, Dhanbad, Jharkhand since 1995.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+            <a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a>
+            <a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a>
+            <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="residential.html"><i class="fas fa-chevron-right"></i> Residential</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> Industrial</a>
+            <a href="solar.html"><i class="fas fa-chevron-right"></i> Solar &amp; Backup</a>
+            <a href="industrial.html"><i class="fas fa-chevron-right"></i> PLC &amp; Automation</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Bhowra, Dhanbad, Jharkhand</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+919122407756">+91 91224 07756</a></div>
+          <div class="footer-contact-item"><i class="fas fa-location-dot"></i><a href="https://maps.app.goo.gl/kbHWJ4Wkmvz2FR5T6" target="_blank" rel="noreferrer">View on Google Maps</a></div>
+        </div>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="about.html">About Us</a><br>
-        <a href="projects.html">Projects</a><br>
-        <a href="contact.html">Contact</a><br>
-        <a href="gallery.html">Gallery</a>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="residential.html">Residential</a><br>
-        <a href="industrial.html">Industrial</a><br>
-        <a href="solar.html">Solar & Backup</a><br>
-        <a href="#">PLC & Automation</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p><i class="fas fa-map-marker-alt"></i> 22, Industrial Estate, Ahmedabad, Gujarat</p>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fas fa-envelope"></i> info@jantaelectricals.com</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Janta Electricals. All rights reserved.</span>
+        <span>Made with <i class="fas fa-heart" style="color:var(--red)"></i> in Dhanbad, Jharkhand</span>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Janta Electricals. All rights reserved.</div>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
