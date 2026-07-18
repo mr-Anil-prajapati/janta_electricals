@@ -62,11 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', event => {
       event.preventDefault();
       const success = document.querySelector('.form-success');
+      const formData = new FormData(contactForm);
+      const message = [
+        'Hello Janta Electricals, I would like to make an inquiry.',
+        `Name: ${formData.get('name')}`,
+        `Phone: ${formData.get('phone')}`,
+        `Email: ${formData.get('email')}`,
+        `Service needed: ${formData.get('service')}`,
+        `Message: ${formData.get('message')}`
+      ].join('\n');
+      const whatsappUrl = `https://wa.me/919122407756?text=${encodeURIComponent(message)}`;
       if (success) {
         success.style.display = 'block';
-        success.textContent = 'Thank you! Your message has been received. Our team will contact you shortly.';
-        contactForm.reset();
+        success.textContent = 'Opening WhatsApp with your inquiry…';
       }
+      window.open(whatsappUrl, '_blank', 'noopener');
     });
   }
 
