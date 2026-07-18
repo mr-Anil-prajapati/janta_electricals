@@ -32,9 +32,11 @@ if (themeToggle) {
 /* ── Page Loader ── */
 const loader = document.getElementById('page-loader');
 if (loader) {
-  window.addEventListener('load', () => {
-    setTimeout(() => loader.classList.add('hidden'), 900);
-  });
+  const hideLoader = () => loader.classList.add('hidden');
+  // Hide after resources load (normal case)
+  window.addEventListener('load', () => setTimeout(hideLoader, 900));
+  // Fallback: always hide after 3 seconds max, so site is never stuck
+  setTimeout(hideLoader, 3000);
 }
 
 /* ── Scroll Progress Bar ── */
