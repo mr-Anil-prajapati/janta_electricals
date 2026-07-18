@@ -1,0 +1,16 @@
+{
+  "name": "Janta Electricals",
+  "shortName": "janta-electricals-bhowra",
+  "established": "1995-01-01",
+  "tagline": "From Home Wiring to Industrial Automation",
+  "description": "Janta Electricals has provided trusted electrical repair, installation, and industrial automation services in Bhowra, Dhanbad, Jharkhand since 1995. We deliver safe workmanship, quality materials, affordable pricing, and reliable service for residential, commercial, and industrial customers.",
+  "phone": "+91 91224 07756",
+  "website": "https://mr-anil-prajapati.github.io/janta_electricals/",
+  "googleMaps": "https://maps.app.goo.gl/kbHWJ4Wkmvz2FR5T6",
+  "address": {
+    "locality": "Bhowra",
+    "city": "Dhanbad",
+    "state": "Jharkhand",
+    "country": "India"
+  }
+}
