@@ -1,5 +1,5 @@
 
-const cacheName = 'janta-electricals-v1';
+const cacheName = 'janta-electricals-v2';
 const assetsToCache = [
   './',
   './index.html',
@@ -16,13 +16,33 @@ const assetsToCache = [
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(assetsToCache)));
+  event.waitUntil(
+    caches.open(cacheName)
+      .then(cache => cache.addAll(assetsToCache))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== cacheName).map(key => caches.delete(key)))));
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key !== cacheName).map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
+  );
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request)));
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          const responseCopy = response.clone();
+          caches.open(cacheName).then(cache => cache.put(event.request, responseCopy));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  } else {
+    event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request)));
+  }
 });
