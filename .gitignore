@@ -1,0 +1,11 @@
+# Node
+node_modules/
+# OS
+.DS_Store
+# Logs
+*.log
+# Builds
+dist/
+build/
+# IDE
+.vscode/
