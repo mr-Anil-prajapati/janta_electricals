@@ -3,14 +3,27 @@
    Premium interactions: particles, counters, nav, animations
    ============================================================ */
 
+/* ── Page Loader: Hide IMMEDIATELY, no waiting ── */
+(function () {
+  var loader = document.getElementById('page-loader');
+  function hideLoader() {
+    if (!loader) return;
+    loader.style.display = 'none';
+  }
+  // Hide after a short branded delay (1 second)
+  setTimeout(hideLoader, 1000);
+  // Also hide when page fully loads
+  window.addEventListener('load', function () { setTimeout(hideLoader, 500); });
+})();
+
 /* ── Theme ── */
-const body       = document.body;
+const body        = document.body;
 const themeToggle = document.querySelector('#themeToggle');
-const THEME_KEY  = 'jantaElectricalsTheme';
+const THEME_KEY   = 'jantaElectricalsTheme';
 
 const applyTheme = (theme) => {
   body.classList.remove('dark-mode', 'light-mode');
-  body.classList.add(theme === 'light' ? 'light-mode' : '');
+  if (theme === 'light') body.classList.add('light-mode');
   if (themeToggle) {
     themeToggle.innerHTML = theme === 'light'
       ? '<i class="fas fa-moon"></i>'
@@ -29,25 +42,12 @@ if (themeToggle) {
   });
 }
 
-/* ── Page Loader ── */
-const loader = document.getElementById('page-loader');
-const hideLoader = () => {
-  if (!loader) return;
-  loader.classList.add('hidden');
-  // Force display:none after transition so it can NEVER block the page
-  setTimeout(() => { loader.style.display = 'none'; }, 600);
-};
-// Hide as soon as DOM is ready (doesn't wait for CDN fonts/scripts)
-document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 800));
-// Ultra-safe fallback: hide after 1.5s no matter what
-setTimeout(hideLoader, 1500);
-
 /* ── Scroll Progress Bar ── */
 const scrollBar = document.getElementById('scroll-progress');
 const updateScrollProgress = () => {
   if (!scrollBar) return;
-  const scrollTop  = window.scrollY;
-  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   scrollBar.style.width = docHeight > 0 ? `${(scrollTop / docHeight) * 100}%` : '0%';
 };
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
@@ -57,7 +57,6 @@ const header = document.querySelector('.site-header');
 const onScroll = () => {
   if (!header) return;
   header.classList.toggle('scrolled', window.scrollY > 50);
-  // Back to top
   const btt = document.getElementById('back-to-top');
   if (btt) btt.classList.toggle('visible', window.scrollY > 400);
 };
@@ -96,10 +95,7 @@ hamburger?.addEventListener('click', () =>
   navLinks?.classList.contains('open') ? closeNav() : openNav()
 );
 
-// Close on nav link click
 navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-
-// Close on Escape
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
 
 /* ── Particle Canvas Hero ── */
@@ -107,7 +103,7 @@ const initParticles = () => {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
 
-  const ctx    = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d');
   let W, H, particles = [], animId;
 
   const resize = () => {
@@ -118,13 +114,13 @@ const initParticles = () => {
   class Particle {
     constructor() { this.reset(); }
     reset() {
-      this.x    = Math.random() * W;
-      this.y    = Math.random() * H;
-      this.vx   = (Math.random() - 0.5) * 0.4;
-      this.vy   = (Math.random() - 0.5) * 0.4;
-      this.r    = Math.random() * 1.5 + 0.5;
-      this.alpha= Math.random() * 0.5 + 0.15;
-      this.color= Math.random() > 0.6
+      this.x     = Math.random() * W;
+      this.y     = Math.random() * H;
+      this.vx    = (Math.random() - 0.5) * 0.4;
+      this.vy    = (Math.random() - 0.5) * 0.4;
+      this.r     = Math.random() * 1.5 + 0.5;
+      this.alpha = Math.random() * 0.5 + 0.15;
+      this.color = Math.random() > 0.6
         ? `rgba(0,168,255,${this.alpha})`
         : `rgba(245,166,35,${this.alpha * 0.6})`;
     }
@@ -150,7 +146,6 @@ const initParticles = () => {
   const LINK_DIST = 140;
   const draw = () => {
     ctx.clearRect(0, 0, W, H);
-    // Draw links
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -180,16 +175,16 @@ const initParticles = () => {
 
 /* ── Animated Number Counters ── */
 const animateCounter = (el) => {
-  const target = parseFloat(el.dataset.target || el.textContent);
-  const suffix = el.dataset.suffix || '';
-  const prefix = el.dataset.prefix || '';
+  const target   = parseFloat(el.dataset.target || el.textContent);
+  const suffix   = el.dataset.suffix || '';
+  const prefix   = el.dataset.prefix || '';
   const duration = 2000;
-  const start = performance.now();
+  const start    = performance.now();
 
   const tick = (now) => {
     const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 4);
-    const val = target % 1 === 0
+    const eased    = 1 - Math.pow(1 - progress, 4);
+    const val      = target % 1 === 0
       ? Math.floor(eased * target)
       : (eased * target).toFixed(1);
     el.textContent = prefix + val + suffix;
@@ -218,9 +213,8 @@ const initCounters = () => {
 const initFAQ = () => {
   document.querySelectorAll('.faq-item button').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
+      const item   = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-      // Close all
       document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     });
@@ -229,7 +223,7 @@ const initFAQ = () => {
 
 /* ── Project Filter ── */
 const initFilter = () => {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterBtns   = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
   filterBtns.forEach(btn => {
@@ -269,7 +263,7 @@ const initContactForm = () => {
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const fd = new FormData(form);
+    const fd    = new FormData(form);
     const lines = [
       '👋 Hello Janta Electricals, I would like to make an inquiry.',
       `📛 Name: ${fd.get('name')}`,
@@ -278,11 +272,11 @@ const initContactForm = () => {
       `🔧 Service: ${fd.get('service')}`,
       `💬 Message: ${fd.get('message')}`
     ];
-    const url = `https://wa.me/919122407756?text=${encodeURIComponent(lines.join('\n'))}`;
+    const url     = `https://wa.me/919122407756?text=${encodeURIComponent(lines.join('\n'))}`;
     const success = document.querySelector('.form-success');
     if (success) {
       success.style.display = 'block';
-      success.textContent = '✅ Opening WhatsApp with your inquiry…';
+      success.textContent   = '✅ Opening WhatsApp with your inquiry…';
     }
     window.open(url, '_blank', 'noopener');
   });
@@ -293,7 +287,7 @@ const initLightbox = () => {
   let lb = document.getElementById('lightbox');
   if (!lb) {
     lb = document.createElement('div');
-    lb.id = 'lightbox';
+    lb.id        = 'lightbox';
     lb.className = 'lightbox';
     lb.innerHTML = `
       <img id="lb-img" src="" alt="Gallery image">
@@ -344,7 +338,6 @@ const initGallery = () => {
   });
   gallery.replaceChildren(...items);
 
-  // Lightbox for dynamically added images
   gallery.querySelectorAll('img').forEach(img => {
     img.style.cursor = 'zoom-in';
     const lb = document.getElementById('lightbox');
@@ -379,13 +372,13 @@ const registerSW = async () => {
 const initGSAP = () => {
   if (!window.gsap) return;
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  tl.from('.hero-eyebrow',  { opacity: 0, y: 20, duration: 0.7 }, 0.2)
-    .from('.hero-copy h1',  { opacity: 0, y: 40, duration: 0.9 }, 0.4)
-    .from('.hero-copy p',   { opacity: 0, y: 25, duration: 0.7 }, 0.7)
-    .from('.hero-actions',  { opacity: 0, y: 20, duration: 0.6 }, 0.9)
-    .from('.hero-trust',    { opacity: 0, y: 15, duration: 0.5 }, 1.1)
+  tl.from('.hero-eyebrow',    { opacity: 0, y: 20, duration: 0.7 }, 0.2)
+    .from('.hero-copy h1',    { opacity: 0, y: 40, duration: 0.9 }, 0.4)
+    .from('.hero-copy p',     { opacity: 0, y: 25, duration: 0.7 }, 0.7)
+    .from('.hero-actions',    { opacity: 0, y: 20, duration: 0.6 }, 0.9)
+    .from('.hero-trust',      { opacity: 0, y: 15, duration: 0.5 }, 1.1)
     .from('.hero-image-wrap', { opacity: 0, x: 40, duration: 0.9 }, 0.5)
-    .from('.hero-badge-float', { opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.5 }, 1.2);
+    .from('.hero-badge-float',{ opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.5 }, 1.2);
 };
 
 /* ── DOMContentLoaded ── */

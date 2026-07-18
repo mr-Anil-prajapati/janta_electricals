@@ -124,6 +124,7 @@ ul, ol { list-style: none; }
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  display: none;
 }
 
 .loader-logo {
