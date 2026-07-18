@@ -1,0 +1,14 @@
+
+{
+  "name": "Janta Electricals",
+  "short_name": "Janta",
+  "description": "Premium residential and industrial electrical services with automation, solar, UPS, and control panels.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d1118",
+  "theme_color": "#0d6efd",
+  "icons": [
+    { "src": "assets/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "assets/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
